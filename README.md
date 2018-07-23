@@ -1,8 +1,6 @@
 ## Video rental API with Node.js & MongoDB
 
----
-
-###Create a server
+### Create a server
 
 ---
 
@@ -11,7 +9,7 @@
 - express
 - mongoose in `index.js` file
 
-`use` relevant middlewares,
+`use` relevant middlewares:
 
 - json() - parses the body of requests with a json payload
 
@@ -30,5 +28,22 @@ mongoose
   .catch(err => console.error("Could not connect to MongoDB..."));
 
 const port = process.env.PORT || 3000;
-app.listen(port, () => console.log(`Listening on port ${port}...`));
+app.listen(port, () => console.log(`Live at port ${port}...`));
+```
+
+### Create Routes & Model for movie Genres
+
+---
+
+List all genres
+
+Definition
+
+`GET /genres`
+
+Response
+
+- `200 OK` on success
+
+```javascript
 ```
