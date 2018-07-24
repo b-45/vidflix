@@ -13,6 +13,7 @@ const Genre = new mongoose.model('Genre', new mongoose.Schema({
 }))
 
 router.get('/', async (req, res) => {
+<<<<<<< HEAD
   const genres = await Genre.find().sort('name')
   res.send(genres)
 })
@@ -40,3 +41,8 @@ function validateGenre(genre) {
   }
   return Joi.validate(genre, scheme)
 }
+=======
+  const genres = Genre.find().sort('name')
+  res.send(genres)
+})
+>>>>>>> 538c25311a9bdc3262d1912f616ac2374cb0e5e3

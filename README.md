@@ -51,6 +51,7 @@ Response
 }
 ```
 
+<<<<<<< HEAD
 Post new genre
 
 Definition
@@ -68,3 +69,8 @@ Response
 ```
 
 ###### A schema is a conceptual framework of your data model that maps to a MongoDB collection. A MongoDB collection is equivalent to a table in a relational database as is a document to a row.
+=======
+###### A schema is a conceptual framework of your data model that maps to a MongoDB collection. A MongoDB collection is equivalent to a table in a relational database as is a document to a row.
+
+### Create
+>>>>>>> 538c25311a9bdc3262d1912f616ac2374cb0e5e3
