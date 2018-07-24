@@ -11,7 +11,7 @@
 
 `use` relevant middlewares:
 
-- json() - parses the body of requests with a json payload
+- json() - parses the body of incoming requests with a json payload
 
 `connect` to mongoDB database
 
@@ -55,11 +55,27 @@ Post new genre
 
 Definition
 
-`Post /`
+`POST /`
 
 Response
 
 - `201 Created` on success
+
+```json
+{
+  "name": "Sci-fi"
+}
+```
+
+Update genre
+
+Definition
+
+`PUT /:id`
+
+Response
+
+- `200 OK` on success
 
 ```json
 {
