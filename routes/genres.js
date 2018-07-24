@@ -17,26 +17,26 @@ router.get('/', async (req, res) => {
   res.send(genres)
 })
 
-
 router.post('/', async (req, res) => {
   const {
     error
-  } = validateGenre(req.body)
-  if (error) return res.status(400).send(error.details[0].message)
+  } = validateGenre(req.body);
+  if (error) return res.status(400).send(error.details[0].message);
 
-  const genre = await Genre.findByIdAndUpdate(req.params.id, {
+  let genre = new Genre({
     name: req.body.name
-  }, {
-    new: true
-  })
-  if (!genre) return res.status(404).send('The genre with the given ID was not found')
-  res.send(genre)
-})
+  });
+  genre = await genre.save();
+
+  res.send(genre);
+});
+
+
 
 
 function validateGenre(genre) {
-  const Schema = {
+  const schema = {
     name: Joi.string().min(3).required()
   }
-  return Joi.validate(genre, scheme)
+  return Joi.validate(genre, schema)
 }
