@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const express = require('express');
 const router = express.Router();
 
-const Genre = new mongoose.model('Genre', new mongoose.Schema({
+const Genre = mongoose.model('Genre', new mongoose.Schema({
   name: {
     type: String,
     required: true,
@@ -12,10 +12,17 @@ const Genre = new mongoose.model('Genre', new mongoose.Schema({
   }
 }))
 
-// GET route handler
+// GET route handler for genres
 router.get('/', async (req, res) => {
   const genres = await Genre.find().sort('name')
   res.send(genres)
+})
+
+// GET route handler for a single genre
+router.get('/:id', async (res, req) => {
+  const genre = await Genre.findById(req.params.id)
+  if (!genre) return res.status(404).send('The genre with the given ID was not found')
+  res.send(genre)
 })
 
 // POST route handler
@@ -64,6 +71,8 @@ router.delete('/:id', async (req, res) => {
 
 
 
+
+
 // validator
 function validateGenre(genre) {
   const schema = {
@@ -71,3 +80,6 @@ function validateGenre(genre) {
   }
   return Joi.validate(genre, schema)
 }
+
+
+module.exports = router;

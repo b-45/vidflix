@@ -46,6 +46,23 @@ Response
 - `200 OK` on success
 
 ```json
+[
+  { "_id": "5b5775d476eab3619f653a7f", "name": "Drama", "__v": 0 },
+  { "_id": "5b5775f676eab3619f653a80", "name": "Thriller", "__v": 0 }
+]
+```
+
+Get a single genres
+
+Definition
+
+`GET /:id`
+
+Response
+
+- `200 OK` on success
+
+```json
 {
   "name": "Sci-fi"
 }
@@ -63,7 +80,7 @@ Response
 
 ```json
 {
-  "name": "Sci-fi"
+  "name": "Drama"
 }
 ```
 
@@ -79,7 +96,7 @@ Response
 
 ```json
 {
-  "name": "Sci-fi"
+  "name": "Action"
 }
 ```
 
