@@ -39,15 +39,32 @@ List all genres
 
 Definition
 
-`GET /genres`
+`GET /`
 
 Response
 
 - `200 OK` on success
 
-```javascript
+```json
+{
+  "name": "Sci-fi"
+}
+```
+
+Post new genre
+
+Definition
+
+`Post /`
+
+Response
+
+- `201 Created` on success
+
+```json
+{
+  "name": "Sci-fi"
+}
 ```
 
 ###### A schema is a conceptual framework of your data model that maps to a MongoDB collection. A MongoDB collection is equivalent to a table in a relational database as is a document to a row.
-
-### Create
