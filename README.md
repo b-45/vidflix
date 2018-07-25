@@ -112,6 +112,26 @@ Response
 
 ### Create Routes & Schema for Customers
 
+#### Get customers
+
+Definition
+
+`GET /`
+
+Response
+
+- `200 OK` on success
+
+#### Get customer by ID
+
+Definition
+
+`GET /:id`
+
+Response
+
+- `200 OK` on success
+
 ---
 
 ###### A schema is a conceptual framework of your data model that maps to a MongoDB collection. A MongoDB collection is equivalent to a table in a relational database as is a document to a row.
