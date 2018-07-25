@@ -39,7 +39,6 @@ router.get('/:id', async (req, res) => {
   res.send(customer)
 })
 
-<<<<<<< HEAD
 // POST new customer
 
 router.post('/', async (req, res) => {
@@ -59,7 +58,7 @@ router.post('/', async (req, res) => {
   res.send(customer)
 })
 
-// Update Customer 
+// UPDATE Customer 
 router.put('/:id', async (req, res) => {
   const {
     error
@@ -78,9 +77,12 @@ router.put('/:id', async (req, res) => {
   res.send(customer)
 })
 
-=======
->>>>>>> 18fddf5c119425a541d098b4fcaac75e3a6fc6de
-
+// DELETE customer
+router.delete('/:id', async (req, res) => {
+  const customer = Customer.findByIdAndRemove(req.params.id)
+  if (!customer) return res.status(404).send('The customer with the given ID was not found.')
+  res.send(customer)
+})
 
 function validateCustomer(customer) {
   const schema = {
@@ -92,5 +94,7 @@ function validateCustomer(customer) {
 
   return Joi.validate(customer, schema);
 }
+
+
 
 module.exports = router
