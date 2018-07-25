@@ -10,7 +10,7 @@ const Customer = mongoose.model('Customer', new mongoose.Schema({
     minlength: 5,
     maxlength: 50
   },
-  birthyear: {
+  birthYear: {
     type: Number,
     min: 1990,
     max: 2050
@@ -39,12 +39,31 @@ router.get('/:id', async (req, res) => {
   res.send(customer)
 })
 
+// POST new customer
+
+router.post('/', async (req, res) => {
+  const {
+    error
+  } = validateCustomer(req.body)
+  if (error) return res.status(400).send(error.details[0].message)
+
+  let customer = new Customer({
+    name: req.body.name,
+    birthYear: req.body.birthyear,
+    isGold: req.body.isGold,
+    phone: req.body.phone
+  })
+
+  customer = await customer.save()
+  res.send(customer)
+})
+
 
 
 function validateCustomer(customer) {
   const schema = {
     name: Joi.string().min(5).max(50).required(),
-    birthyear: Joi.number().integer().min(1900).max(2050),
+    birthYear: Joi.number().integer().min(1900).max(2050),
     phone: Joi.string().min(5).max(50).required(),
     isGold: Joi.boolean()
   };
