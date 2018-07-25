@@ -142,6 +142,16 @@ Response
 
 - `201 Created` on success
 
+#### Update customer
+
+Definition
+
+`PUT /:id`
+
+Response
+
+- `200 OK` on success
+
 ---
 
 ###### A schema is a conceptual framework of your data model that maps to a MongoDB collection. A MongoDB collection is equivalent to a table in a relational database as is a document to a row.
