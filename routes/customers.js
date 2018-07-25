@@ -10,6 +10,11 @@ const Customer = mongoose.model('Customer', new mongoose.Schema({
     minlength: 5,
     maxlength: 50
   },
+  birthyear: {
+    type: Number,
+    min: 1990,
+    max: 2050
+  },
   isGold: {
     type: Boolean,
   },
@@ -21,5 +26,21 @@ const Customer = mongoose.model('Customer', new mongoose.Schema({
   }
 }))
 
+
+router.get('/', async (req, res) => {
+  const customers = await Customer.find().sort('name')
+  res.send(customers)
+})
+
+function validateCustomer(customer) {
+  const schema = {
+    name: Joi.string().min(5).max(50).required(),
+    birthyear: Joi.number().integer().min(1900).max(2050),
+    phone: Joi.string().min(5).max(50).required(),
+    isGold: Joi.boolean()
+  };
+
+  return Joi.validate(customer, schema);
+}
 
 module.exports = router
