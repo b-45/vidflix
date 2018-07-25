@@ -39,6 +39,7 @@ router.get('/:id', async (req, res) => {
   res.send(customer)
 })
 
+<<<<<<< HEAD
 // POST new customer
 
 router.post('/', async (req, res) => {
@@ -77,6 +78,8 @@ router.put('/:id', async (req, res) => {
   res.send(customer)
 })
 
+=======
+>>>>>>> 18fddf5c119425a541d098b4fcaac75e3a6fc6de
 
 
 function validateCustomer(customer) {

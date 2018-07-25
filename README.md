@@ -132,6 +132,7 @@ Response
 
 - `200 OK` on success
 
+<<<<<<< HEAD
 #### Post new customer
 
 Definition
@@ -152,6 +153,8 @@ Response
 
 - `200 OK` on success
 
+=======
+>>>>>>> 18fddf5c119425a541d098b4fcaac75e3a6fc6de
 ---
 
 ###### A schema is a conceptual framework of your data model that maps to a MongoDB collection. A MongoDB collection is equivalent to a table in a relational database as is a document to a row.
