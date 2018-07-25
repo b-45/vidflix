@@ -35,7 +35,7 @@ app.listen(port, () => console.log(`Live at port ${port}...`));
 
 ---
 
-List all genres
+#### List all genres
 
 Definition
 
@@ -52,7 +52,7 @@ Response
 ]
 ```
 
-Get a single genres
+#### Get a single genres
 
 Definition
 
@@ -68,7 +68,7 @@ Response
 }
 ```
 
-Post new genre
+#### Post new genre
 
 Definition
 
@@ -84,7 +84,7 @@ Response
 }
 ```
 
-Update genre
+#### Update genre
 
 Definition
 
@@ -100,7 +100,7 @@ Response
 }
 ```
 
-Delete genre
+#### Delete genre
 
 Definition
 
@@ -109,5 +109,9 @@ Definition
 Response
 
 - `200 OK` on success
+
+### Create Routes & Schema for Customers
+
+---
 
 ###### A schema is a conceptual framework of your data model that maps to a MongoDB collection. A MongoDB collection is equivalent to a table in a relational database as is a document to a row.
