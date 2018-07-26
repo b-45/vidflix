@@ -3,7 +3,7 @@ const router = express.Router()
 const {
   Genre,
   validate
-} = require('../models/customers')
+} = require('../models/genres')
 
 // GET route handler for genres
 router.get('/', async (req, res) => {
