@@ -164,6 +164,36 @@ Response
 
 ### Create Routes & Schema/Model for Customers
 
+#### Get movies
+
+Definition
+
+`GET /`
+
+Response
+
+- `200 OK` on success
+
+#### Get movie by ID
+
+Definition
+
+`GET /:id`
+
+Response
+
+- `200 OK` on success
+
+#### Post new movie
+
+Definition
+
+`POST /`
+
+Response
+
+- `201 Created` on success
+
 ---
 
 ###### A schema is a conceptual framework of your data model that maps to a MongoDB collection. A MongoDB collection is equivalent to a table in a relational database as is a document to a row.
