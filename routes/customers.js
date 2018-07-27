@@ -3,7 +3,7 @@ const router = express.Router();
 const {
   Customer,
   validate
-} = require('../models/customers')
+} = require('../models/customer')
 
 // GET customers
 router.get('/', async (req, res) => {

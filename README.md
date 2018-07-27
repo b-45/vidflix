@@ -110,7 +110,7 @@ Response
 
 - `200 OK` on success
 
-### Create Routes & Schema for Customers
+### Create Routes & Schema/Model for Customers
 
 #### Get customers
 
@@ -161,6 +161,8 @@ Definition
 Response
 
 - `200 OK` on success
+
+### Create Routes & Schema/Model for Customers
 
 ---
 
